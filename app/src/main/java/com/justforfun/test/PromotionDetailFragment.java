@@ -1,6 +1,7 @@
 package com.justforfun.test;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.github.clans.fab.FloatingActionButton;
 import com.justforfun.test.dummy.DummyContent;
 import com.justforfun.test.model.Promotion;
 
@@ -30,6 +32,13 @@ public class PromotionDetailFragment extends Fragment {
      * The dummy content this fragment is presenting.
      */
     private Promotion mItem;
+
+    View.OnClickListener listener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            share();
+        }
+    };
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -67,8 +76,19 @@ public class PromotionDetailFragment extends Fragment {
             ((TextView) rootView.findViewById(R.id.text_view_title)).setText(mItem.getTitle());
             ((TextView) rootView.findViewById(R.id.text_view_subtitle)).setText(mItem.getSubtitle());
             ((ImageView) rootView.findViewById(R.id.image_view_logo)).setImageResource(mItem.getLogo());
+            ((FloatingActionButton) rootView.findViewById(R.id.menu_fb_share)).setOnClickListener(listener);
+            ((FloatingActionButton) rootView.findViewById(R.id.menu_email_share)).setOnClickListener(listener);
+            ((FloatingActionButton) rootView.findViewById(R.id.menu_twitter_share)).setOnClickListener(listener);
         }
 
         return rootView;
+    }
+
+    private void share(){
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_TEXT, mItem.getDescription());
+        sendIntent.setType("text/plain");
+        startActivity(sendIntent);
     }
 }

@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     tools:context="com.justforfun.test.PromotionDetailFragment">
 
 
@@ -36,9 +37,32 @@
             android:gravity="center_horizontal"
             android:text="details"/>
 
-        <android.support.design.widget.FloatingActionButton
+        <com.github.clans.fab.FloatingActionMenu
+            android:id="@+id/fab_share"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"/>
+            android:layout_gravity="right"
+            fab:menu_icon="@drawable/icono_compartir">
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/menu_fb_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icono_compartir_facebook"
+                fab:fab_size="mini" />
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/menu_email_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icono_compartir_mail"
+                fab:fab_size="mini" />
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/menu_twitter_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icono_compartir_twitter"
+                fab:fab_size="mini"/>
+
+        </com.github.clans.fab.FloatingActionMenu>
     </LinearLayout>
 </ScrollView>
