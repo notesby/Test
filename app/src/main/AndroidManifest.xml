@@ -12,8 +12,7 @@
         <activity
             android:name=".PromotionListActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".PromotionDetailActivity"
             android:label="@string/title_promotion_detail"
@@ -23,13 +22,18 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.justforfun.test.PromotionListActivity" />
         </activity>
-        <activity android:name=".SplashActivity" android:theme="@style/AppTheme.NoActionBar">
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

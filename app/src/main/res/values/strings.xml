@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">Test</string>
     <string name="title_promotion_detail">Promotion Detail</string>
+    <string name="capital_social">capital social</string>
+    <string name="login_textview_ingresa">o ingresa tu correo o contraseña</string>
+    <string name="password">Contraseña</string>
+    <string name="username">Usuario</string>
+    <string name="login_olvidaste"><u>¿Has olvidado tu contraseña?</u></string>
+    <string name="register">Regístrate</string>
+    <string name="login">Ingresar</string>
+    <string name="login_facebook">Inicia Sesión con Facebook</string>
 </resources>
