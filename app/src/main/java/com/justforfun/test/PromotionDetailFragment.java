@@ -7,9 +7,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.justforfun.test.dummy.DummyContent;
+import com.justforfun.test.model.Promotion;
 
 /**
  * A fragment representing a single Promotion detail screen.
@@ -27,7 +29,7 @@ public class PromotionDetailFragment extends Fragment {
     /**
      * The dummy content this fragment is presenting.
      */
-    private DummyContent.DummyItem mItem;
+    private Promotion mItem;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -44,12 +46,12 @@ public class PromotionDetailFragment extends Fragment {
             // Load the dummy content specified by the fragment
             // arguments. In a real-world scenario, use a Loader
             // to load content from a content provider.
-            mItem = DummyContent.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
+            mItem = PromotionListActivity.promotionsMap.get(getArguments().getInt(ARG_ITEM_ID));
 
             Activity activity = this.getActivity();
             CollapsingToolbarLayout appBarLayout = (CollapsingToolbarLayout) activity.findViewById(R.id.toolbar_layout);
             if (appBarLayout != null) {
-                appBarLayout.setTitle(mItem.content);
+                appBarLayout.setTitle(mItem.getTitle());
             }
         }
     }
@@ -61,7 +63,10 @@ public class PromotionDetailFragment extends Fragment {
 
         // Show the dummy content as text in a TextView.
         if (mItem != null) {
-            ((TextView) rootView.findViewById(R.id.promotion_detail)).setText(mItem.details);
+            ((TextView) rootView.findViewById(R.id.text_view_detail)).setText(mItem.getDescription());
+            ((TextView) rootView.findViewById(R.id.text_view_title)).setText(mItem.getTitle());
+            ((TextView) rootView.findViewById(R.id.text_view_subtitle)).setText(mItem.getSubtitle());
+            ((ImageView) rootView.findViewById(R.id.image_view_logo)).setImageResource(mItem.getLogo());
         }
 
         return rootView;

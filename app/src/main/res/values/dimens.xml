@@ -4,9 +4,11 @@
     <dimen name="app_bar_height">200dp</dimen>
     <dimen name="item_width">200dp</dimen>
     <dimen name="text_margin">16dp</dimen>
-    <dimen name="low_padding">8dp</dimen>
+
+    <dimen name="low_padding">4dp</dimen>
     <dimen name="mid_padding">32dp</dimen>
-    <dimen name="low_margin">4dp</dimen>
+
+    <dimen name="low_margin">8dp</dimen>
     <dimen name="mid_margin">16dp</dimen>
     <dimen name="large_margin">32dp</dimen>
 </resources>
